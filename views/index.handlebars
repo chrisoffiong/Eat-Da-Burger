@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <section id="page-name">
+                <img id="main-image" src="https://static.olocdn.net/menu/applebees/ffac757fc64d1e414422bf204f1a4f87.jpg"
+                    width="500" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></img>
+                <h1>Eat-Da-Buger</h1>
+            </section>
+        </div>
+    </div>
+    <section class="row">
+        <div class="col-md-7 col-left">
+            <table>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block}}
+                {{/unless}}
+                {{/each}}
+            </table>
+        </div>
+        <div class="col-md-5 col-right">
+            {{#each burgers}}
+            {{#if devoured}}
+            <div>{{id}}. {{burger_name}}</div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </section>
+
+    <form class="create-form">
+        <div class="form-group">
+            <label for="name"></label>
+            <textarea id="name" name="burger-name" rows="2" cols="40" placeholder="What do you want to eat?"></textarea>
+        </div>
+        <button type="submit">Add Burger</button>
+    </form>
+</div>

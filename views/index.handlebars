@@ -1,37 +1,54 @@
 <div class="container">
+
+    <div class="jumbotron">
+        <h1 id="color-override">Eat it!</h1>
+
+        <panel>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="addburger">Add Burger</label>
+                    <h3 id="color-white">Insert a Burger.</h3>
+                    <input type="text" id="newburger" name="burger">
+                    <button type="submit" class="btn" id="addburger"><span class="fa fa-thumbs-up"></span></button>
+                    <h4>Then go to town on it!!!!</h4>
+                </div>
+            </form>
+        </panel>
+    </div>
+
     <div class="row">
-        <div class="col-md-4">
-            <section id="page-name">
-                <img id="main-image" src="https://static.olocdn.net/menu/applebees/ffac757fc64d1e414422bf204f1a4f87.jpg"
-                    width="500" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></img>
-                <h1>Eat-Da-Buger</h1>
-            </section>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="lefthead"><strong>Add Burger</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                            {{#unless devoured}}
+                                <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                                <button type="button" class="eatburger btn" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+                                <hr>
+                            {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="righthead"><strong>Devoured Burgers</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                            {{#if devoured}}
+                                <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                                <button type="button" class="trashburger btn btn-danger" id ="trashbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
+                                <hr>
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-    <section class="row">
-        <div class="col-md-7 col-left">
-            <table>
-                {{#each burgers}}
-                {{#unless devoured}}
-                {{> burgers/burger-block}}
-                {{/unless}}
-                {{/each}}
-            </table>
-        </div>
-        <div class="col-md-5 col-right">
-            {{#each burgers}}
-            {{#if devoured}}
-            <div>{{id}}. {{burger_name}}</div>
-            {{/if}}
-            {{/each}}
-        </div>
-    </section>
 
-    <form class="create-form">
-        <div class="form-group">
-            <label for="name"></label>
-            <textarea id="name" name="burger-name" rows="2" cols="40" placeholder="What do you want to eat?"></textarea>
-        </div>
-        <button type="submit">Add Burger</button>
-    </form>
 </div>

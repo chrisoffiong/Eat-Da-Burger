@@ -1,27 +1,29 @@
 {
-  "name": "eatdaburger",
+  "name": "eat",
   "version": "1.0.0",
-  "description": "Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.",
+  "description": "",
   "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.16.0",
+    "server": "^1.0.18"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GrissomErick/Eat-Da-Burger.git"
+    "url": "git+https://github.com/chrisoffiong/Eat-Da-Burger.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GrissomErick/Eat-Da-Burger/issues"
+    "url": "https://github.com/chrisoffiong/Eat-Da-Burger/issues"
   },
-  "homepage": "https://github.com/GrissomErick/Eat-Da-Burger#readme",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "mysql": "^2.15.0"
-  }
+  "homepage": "https://github.com/chrisoffiong/Eat-Da-Burger#readme"
 }

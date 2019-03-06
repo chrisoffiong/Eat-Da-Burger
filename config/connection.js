@@ -3,7 +3,7 @@ let mysql = require("mysql");
  let connection = mysql.createConnection({
         host: "tyduzbv3ggpf15sx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	",
         user: "azwqd9cc8p8d6gvs",
-        password: "rg150zg18k9iyokw",
+        password: "pj3ktbk3nyxeost5",
         database: "gv5y7fy06nyszj9o"
     });
 ;
